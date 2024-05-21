@@ -1,5 +1,5 @@
 # Use Alpine edge for now as some required dependencies are only in the testing repository
-FROM alpine:edge
+FROM docker.io/alpine:edge
 
 # Switch to the root user while we do our changes
 USER root

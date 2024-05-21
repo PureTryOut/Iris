@@ -1,5 +1,5 @@
 # --- Build Node ---
-FROM rust:slim-bookworm AS Builder
+FROM docker.io/rust:slim-bookworm AS Builder
 LABEL org.opencontainers.image.authors="https://github.com/seppi91"
 ARG TARGETPLATFORM
 ARG TARGETARCH
@@ -53,7 +53,7 @@ RUN export CSOUND_LIB_DIR="/usr/lib/$(uname -m)-linux-gnu" \
 
 
 # --- Release Node ---
-FROM debian:bookworm-slim as Release
+FROM docker.io/debian:bookworm-slim as Release
 
 # Switch to the root user while we do our changes
 USER root
